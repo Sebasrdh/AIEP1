@@ -31,24 +31,38 @@
                 "text": "Ciudadano"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
             "shape": "actor",
-            "id": "a71fbafe-9006-4e47-b392-8e73da5bc668",
             "zIndex": 1,
+            "id": "a71fbafe-9006-4e47-b392-8e73da5bc668",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
-              "description": "",
+              "name": "Ciudadano",
+              "description": "Ingresa datos personales, deposita mensualmente en cuenta de ahorro",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "providesAuthentication": false,
-              "hasOpenThreats": false,
-              "threats": [],
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "d738e82b-afb1-4623-ac18-a7fd1ce1e7f5",
+                  "title": "Nueva amenaza STRIDE",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Information disclosure / Brecha de información",
+                  "description": "Posible filtración de datos personales",
+                  "mitigation": "Verificar que el sistema es de confianza antes de ingresar datos",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": ""
+                }
+              ],
               "isBidirectional": false,
               "protocol": "",
               "isEncrypted": false,
@@ -69,24 +83,38 @@
                 "text": "Inscripción"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
             "shape": "process",
-            "id": "c5837ef3-4d93-477c-8a63-5331e4886f21",
             "zIndex": 2,
+            "id": "c5837ef3-4d93-477c-8a63-5331e4886f21",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
-              "description": "",
+              "name": "Inscripción",
+              "description": "Inscripción de datos  de ciudadanos",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "privilegeLevel": "",
-              "hasOpenThreats": false,
-              "threats": [],
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "e34bd8e1-f633-4871-892c-818781e32261",
+                  "title": "Nueva amenaza STRIDE",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering / Manipulación",
+                  "description": "Ingresar datos falsos",
+                  "mitigation": "Realizar la validación de información del ciudadano",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
+                }
+              ],
               "isBidirectional": false,
               "protocol": "",
               "isEncrypted": false,
@@ -242,45 +270,6 @@
               "hasOpenThreats": false,
               "threats": []
             },
-            "id": "0d4a07c9-7b2c-4b36-bc7d-cd3445930401",
-            "source": {
-              "cell": "c5837ef3-4d93-477c-8a63-5331e4886f21"
-            },
-            "target": {
-              "cell": "0bd89e8c-47f8-489a-9202-21d7f7951d91"
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Data Flow",
-              "description": "",
-              "outOfScope": false,
-              "isBidirectional": false,
-              "reasonOutOfScope": "",
-              "protocol": "",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": []
-            },
             "id": "eb86e0ea-94cd-4185-a082-0f1de5438ea8",
             "source": {
               "cell": "a1746cfd-e0ce-460d-8da7-03a03670d974"
@@ -348,7 +337,13 @@
             },
             "target": {
               "cell": "859277ba-632e-414a-b75f-9074eb1a0c2e"
-            }
+            },
+            "vertices": [
+              {
+                "x": 440,
+                "y": 70
+              }
+            ]
           },
           {
             "shape": "flow",
@@ -426,6 +421,51 @@
             },
             "target": {
               "cell": "c5837ef3-4d93-477c-8a63-5331e4886f21"
+            },
+            "vertices": [
+              {
+                "x": 830,
+                "y": 310
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Data Flow",
+              "description": "",
+              "outOfScope": false,
+              "isBidirectional": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": []
+            },
+            "id": "0d4a07c9-7b2c-4b36-bc7d-cd3445930401",
+            "source": {
+              "cell": "c5837ef3-4d93-477c-8a63-5331e4886f21"
+            },
+            "target": {
+              "cell": "0bd89e8c-47f8-489a-9202-21d7f7951d91"
             }
           },
           {
@@ -452,8 +492,8 @@
             },
             "visible": true,
             "shape": "store",
-            "id": "0bd89e8c-47f8-489a-9202-21d7f7951d91",
             "zIndex": 11,
+            "id": "0bd89e8c-47f8-489a-9202-21d7f7951d91",
             "data": {
               "type": "tm.Store",
               "name": "Datos personales",
@@ -489,12 +529,12 @@
             },
             "visible": true,
             "shape": "actor",
-            "id": "a1746cfd-e0ce-460d-8da7-03a03670d974",
             "zIndex": 12,
+            "id": "a1746cfd-e0ce-460d-8da7-03a03670d974",
             "data": {
               "type": "tm.Flow",
-              "name": "Data Flow",
-              "description": "",
+              "name": "Serviu",
+              "description": "Valida información y evalua viviendas",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "providesAuthentication": false,
@@ -527,8 +567,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "f7c3a183-b3d2-45b4-a9d6-d66968843921",
             "zIndex": 13,
+            "id": "f7c3a183-b3d2-45b4-a9d6-d66968843921",
             "data": {
               "type": "tm.Flow",
               "name": "Solicitud\n del \nsubsidio\n",
@@ -565,8 +605,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "a1f8ca4c-a68f-400f-a4e1-bcaeef7f3bf5",
             "zIndex": 14,
+            "id": "a1f8ca4c-a68f-400f-a4e1-bcaeef7f3bf5",
             "data": {
               "type": "tm.Process",
               "name": "Evaluación\nde\nviviendas",
@@ -599,8 +639,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "859277ba-632e-414a-b75f-9074eb1a0c2e",
             "zIndex": 15,
+            "id": "859277ba-632e-414a-b75f-9074eb1a0c2e",
             "data": {
               "type": "tm.Boundary",
               "name": "Depositos mensuales",
@@ -638,8 +678,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "c2ffc1bf-7c58-499a-a619-06fe86f7ba38",
             "zIndex": 16,
+            "id": "c2ffc1bf-7c58-499a-a619-06fe86f7ba38",
             "data": {
               "type": "tm.Boundary",
               "name": "Cuenta de Ahorro",
@@ -661,6 +701,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 3
   }
 }
